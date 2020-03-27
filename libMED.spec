@@ -4,7 +4,7 @@
 #
 Name     : libMED
 Version  : 3.3.1+repack
-Release  : 2
+Release  : 3
 URL      : http://deb.debian.org/debian/pool/main/m/med-fichier/med-fichier_3.3.1+repack.orig.tar.gz
 Source0  : http://deb.debian.org/debian/pool/main/m/med-fichier/med-fichier_3.3.1+repack.orig.tar.gz
 Summary  : No detailed summary available
