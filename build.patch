@@ -1,28 +1,6 @@
---- med-fichier-3.3.1+repack/configure~	2017-10-31 16:04:21.000000000 +0000
-+++ med-fichier-3.3.1+repack/configure	2018-12-04 10:41:46.952965780 +0000
-@@ -7475,7 +7475,7 @@
-          H5_VER_MINOR=`  grep '#define *H5_VERS_MINOR' $HDF5_ABS_PATH | sed  's/^.*H5_VERS_MINOR[[ \t]]*\([0-9]*\)[[ \t]]*.*$/\1/g' `
-          H5_VER_RELEASE=`grep '#define *H5_VERS_RELEASE' $HDF5_ABS_PATH | sed  's/^.*H5_VERS_RELEASE[[ \t]]*\([0-9]*\)[[ \t]]*.*$/\1/g' `
-          HDF5_VERSION=`  expr 10000 \* ${H5_VER_MAJOR} + 100 \* ${H5_VER_MINOR} + ${H5_VER_RELEASE} `
--         test "0${HDF5_VERSION}" -gt "10899" || test "0${HDF5_VERSION}" -lt "10811" && as_fn_error $? "
-+         test "0${HDF5_VERSION}" -gt "11099" || test "0${HDF5_VERSION}" -lt "10811" && as_fn_error $? "
- This HDF5 version ${H5_VER_MAJOR}.${H5_VER_MINOR}.${H5_VER_RELEASE} must not be used with med-fichier${MED_NUM_MAJEUR}.${MED_NUM_MINEUR}.${MED_NUM_RELEASE}.
- The HDF5 library version used by med-fichier${MED_NUM_MAJEUR}.y.z MUST NOT be > 1.8 and have to be at least ${HDF_VERSION_REF}.
- DO NOT TRY TO COMPILE med-fichier${MED_NUM_MAJEUR}.${MED_NUM_MINEUR}.${MED_NUM_RELEASE} version with an HDF5 library which would generate an hdf5 file not compliant with HDF5-1.8.z library.
---- med-fichier-3.3.1+repack/src/hdfi/_MEDmemFileOpen.c~	2017-07-10 12:50:34.000000000 +0000
-+++ med-fichier-3.3.1+repack/src/hdfi/_MEDmemFileOpen.c	2018-12-04 10:59:28.962950994 +0000
-@@ -434,7 +434,7 @@
-     goto ERROR;
-   }
- 
--#if H5_VERS_MINOR > 8
-+#if H5_VERS_MINOR > 10
- #error "Don't forget to change the compatibility version of the library !"
- #endif
-   if ( H5Pset_libver_bounds( _fapl, H5F_LIBVER_18, H5F_LIBVER_18) ) {
---- med-fichier-3.3.1+repack/Makefile.in~	2017-10-31 16:04:16.000000000 +0000
-+++ med-fichier-3.3.1+repack/Makefile.in	2018-12-04 11:06:04.106945493 +0000
-@@ -440,7 +440,7 @@
+--- a/Makefile.in-org	2020-04-01 13:43:32.813637000 -0700
++++ b/Makefile.in	2020-04-01 13:44:25.257831365 -0700
+@@ -457,7 +457,7 @@
  MAINTAINERCLEANFILES = Makefile.in aclocal.m4 configure config-h.in stamp-h.in config.cache config.h.in config.log config.status
  
  # Process the following directories
