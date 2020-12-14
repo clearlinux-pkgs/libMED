@@ -4,7 +4,7 @@
 #
 Name     : libMED
 Version  : 4.0.0+repack
-Release  : 6
+Release  : 7
 URL      : https://deb.debian.org/debian/pool/main/m/med-fichier/med-fichier_4.0.0+repack.orig.tar.gz
 Source0  : https://deb.debian.org/debian/pool/main/m/med-fichier/med-fichier_4.0.0+repack.orig.tar.gz
 Summary  : No detailed summary available
