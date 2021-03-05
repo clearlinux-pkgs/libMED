@@ -1,0 +1,4 @@
+# From Debian changelog:
+### Workaround for FTBFS with GCC-10:
+### Error: Type mismatch between actual argument at (1) and actual argument at (2)
+export FFLAGS="$FFLAGS -fallow-argument-mismatch"

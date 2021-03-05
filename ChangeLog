@@ -1,3 +1,32 @@
+Modifications dans la version 4.1.0 :
+
+- Autorise la création de fichier 3.y par MEDfileVersionOpen
+   Le fichier crée est bien en hdf5-1.8 independamment du fait que la bibiliothèque utilise HDF5-1.10
+   La version mineure est choisie par l'utilisateur (impact sur le modèle interne utilisé)
+   La version release est forcément nulle car n'a pas d'impact sur le modèle interne
+    (corrections de bugs embarquées dans la bibiliothèque utilisée)
+- Developpement d'un nouveau mode d'accès au contenu d'un champ :
+  Il est possible d'obtenir directement la liste des types d'entités utilisés
+  Il est possible d'obtenir directement la liste des types géométriques utilisés
+- Corrections de typages ds les messages d'erreur en configuration med-int=long
+- Création d'un mdump4 utilisant les nvelles fonctions d'accès rapide aux listes d'entités/géo des champs.
+   (ce n'est pas le mdump par défaut car pour l'instant il ne relit pas les fichiers de version < 4.1 )
+- Maj du medimport
+- Maj version doxygen et corrections de documentation
+- Mise à jour des fichiers CMake par application de patchs divers
+- Possibilité de définir -DMED_MEDINT_TYPE={int|long|long long (WINDOWS) } pour la construction en cmake
+- Gestion Unicode pour les noms de fichiers MED sous windows (Cmake option off par défaut)
+- Correction d'un bug de typage de med_idt pour la fct f77 d'ouverture en mode //
+
+Modifications dans la version 4.0.1 :
+
+- Correction du non affichage de la documentation des routines fortran contenant un integer*8 fid
+- Corrections diverses de mauvais affichage des codes d'erreur pour les id 64bits.
+- Portage Windows pour faire passer les tests
+- Deux routines f77 du module joint avait un fid resté en 32bits
+- Le fichier test10.py n'était pas embarqué ds la distribution (erreur en cas de make clean puis make)
+- Correction d'un typage de paramètre qui générait une erreur ds test20 sur os32bits
+
 Modifications dans la version 4.0.0 :
 
 - Portage HDF5-1.10 : med-4 est capable de lire les fichier med 3.y.z mais les bibliothèques med-3.y.z ne
@@ -5,7 +34,7 @@ Modifications dans la version 4.0.0 :
 - Mises à jour des tests Fortran pour utiliser le type integer*8 pour tous les fid (MEDfileOpen).
   En effet avec hdf5-1.10 les identifiants sont passés en 64 bits.
 - La bibilothèque med-4 permet de modifier des fichiers med-3 (créés en hdf5-1.8.x)
-- Vérification de la version hdf5-1.10.2 minimum (les versions précédentes ne gèrent pas corectement 
+- Vérification de la version hdf5-1.10.2 minimum (les versions précédentes ne gèrent pas corectement
   la selection du modèle d'écriture interne d'hdf; ce qui peut générer des fichiers 3.y.z modifiés
   par med-4 mais plus relisibles en med-3 )
 - Interdiction de compiler Med-4 avec hdf5-1.8
@@ -19,7 +48,7 @@ Modifications dans la version 4.0.0 :
 	* (compatibilité .py2 .py3 cf. tests/python)
 - Les wrappers python sont pré-générés pour python3
   Si python3 n'est pas le python par défaut utiliser PYTHON_VERSION=3 au ./configure
-  Sinon, il faut swig ou desactiver l'interface python
+  Sinon, il faut préciser --with-swig= ou désactiver l'interface python --disable-python
 - Correction d'une erreur générée à l'appel de MEDmeshnEntity dans mdump pour les éléments de structures
 - Ajouts de Usecases en python
 - Ajout de la documentation du modèle 3/4 en UML

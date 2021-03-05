@@ -49,6 +49,8 @@ libmed.so.11:MEDfieldComputingStepInfo
 libmed.so.11:MEDfieldComputingStepMeshInfo
 libmed.so.11:MEDfieldComputingStepMeshWr
 libmed.so.11:MEDfieldCr
+libmed.so.11:MEDfieldEntityType
+libmed.so.11:MEDfieldGeometryType
 libmed.so.11:MEDfieldInfo
 libmed.so.11:MEDfieldInfoByName
 libmed.so.11:MEDfieldInterpInfo
@@ -61,6 +63,8 @@ libmed.so.11:MEDfieldValueWithProfileWr
 libmed.so.11:MEDfieldValueWr
 libmed.so.11:MEDfieldnComponent
 libmed.so.11:MEDfieldnComponentByName
+libmed.so.11:MEDfieldnEntityType
+libmed.so.11:MEDfieldnGeometryType
 libmed.so.11:MEDfieldnInterp
 libmed.so.11:MEDfieldnProfile
 libmed.so.11:MEDfieldnValue
@@ -89,7 +93,15 @@ libmed.so.11:MEDformatConforme
 libmed.so.11:MEDgaussEcr
 libmed.so.11:MEDgaussInfo
 libmed.so.11:MEDgaussLire
-libmed.so.11:MEDgetGeometryTypeFromName
+libmed.so.11:MEDgetCellGeometryTypeIt
+libmed.so.11:MEDgetEdgeGeometryTypeIt
+libmed.so.11:MEDgetEntityGeometryTypeIt
+libmed.so.11:MEDgetEntityTypeIt
+libmed.so.11:MEDgetEntityTypeName
+libmed.so.11:MEDgetFaceGeometryTypeIt
+libmed.so.11:MEDgetGeometryTypeFromIname
+libmed.so.11:MEDgetGeometryTypeName
+libmed.so.11:MEDgetNodeGeometryTypeIt
 libmed.so.11:MEDglobalNumEcr
 libmed.so.11:MEDglobalNumLire
 libmed.so.11:MEDgro2famCr
@@ -303,6 +315,7 @@ libmed.so.11:_MED1cstring
 libmed.so.11:_MED23v30stringConvert
 libmed.so.11:_MED2cstring
 libmed.so.11:_MEDGeometrieElement
+libmed.so.11:_MEDaccess
 libmed.so.11:_MEDattrFermer
 libmed.so.11:_MEDattrNumEcrire
 libmed.so.11:_MEDattrNumLire
@@ -391,6 +404,8 @@ libmed.so.11:_MEDfieldComputingStepMeshInfo30
 libmed.so.11:_MEDfieldComputingStepMeshInfo31
 libmed.so.11:_MEDfieldCr30
 libmed.so.11:_MEDfieldCr31
+libmed.so.11:_MEDfieldEntityType41
+libmed.so.11:_MEDfieldGeometryType41
 libmed.so.11:_MEDfieldInfoByName236
 libmed.so.11:_MEDfieldInfoByName30
 libmed.so.11:_MEDfieldValueAdvancedRd236
@@ -398,6 +413,10 @@ libmed.so.11:_MEDfieldValueAdvancedRd30
 libmed.so.11:_MEDfieldValueAdvancedRd33
 libmed.so.11:_MEDfieldValueAdvancedWr30
 libmed.so.11:_MEDfieldValueAdvancedWr33
+libmed.so.11:_MEDfieldValueAdvancedWr41
+libmed.so.11:_MEDfieldValueUpdateEntityList
+libmed.so.11:_MEDfieldnEntityType41
+libmed.so.11:_MEDfieldnGeometryType41
 libmed.so.11:_MEDfieldnProfile236
 libmed.so.11:_MEDfieldnProfile30
 libmed.so.11:_MEDfieldnValue
@@ -431,6 +450,8 @@ libmed.so.11:_MEDgetDatasetName
 libmed.so.11:_MEDgetDatasetParameter
 libmed.so.11:_MEDgetDatatype
 libmed.so.11:_MEDgetDynGeometricParameter
+libmed.so.11:_MEDgetEntityListAttributeIName
+libmed.so.11:_MEDgetEntityListAttributeINameAll
 libmed.so.11:_MEDgetEntityTypeName
 libmed.so.11:_MEDgetExternalGeometryTypeName
 libmed.so.11:_MEDgetFieldEntityGeoTypeName
@@ -488,6 +509,8 @@ libmed.so.11:_MEDnFamilyGroup30
 libmed.so.11:_MEDnFamilyGroup32
 libmed.so.11:_MEDnObjects
 libmed.so.11:_MEDnObjets
+libmed.so.11:_MEDnSet32bits
+libmed.so.11:_MEDnSet8bits
 libmed.so.11:_MEDnSubdomainJoint236
 libmed.so.11:_MEDnSubdomainJoint30
 libmed.so.11:_MEDnomDataset
@@ -508,6 +531,8 @@ libmed.so.11:_MEDprofileRd236
 libmed.so.11:_MEDprofileRd30
 libmed.so.11:_MEDselectAllEntitiesFullI
 libmed.so.11:_MEDselectAllEntitiesNoI
+libmed.so.11:_MEDset32bits
+libmed.so.11:_MEDset8bits
 libmed.so.11:_MEDsetFilter
 libmed.so.11:_MEDsetModeAcces
 libmed.so.11:_MEDsoftlinkDel
@@ -521,6 +546,8 @@ libmed.so.11:_MEDsubdomainCorrespondenceSizeInfo236
 libmed.so.11:_MEDsubdomainCorrespondenceSizeInfo30
 libmed.so.11:_MEDsubdomainJointInfo236
 libmed.so.11:_MEDsubdomainJointInfo30
+libmed.so.11:_MEDtest32bits
+libmed.so.11:_MEDtest8bits
 libmed.so.11:_MEDversionedApi
 libmed.so.11:_MEDversionedApi3
 libmed.so.11:_MEDvisit
@@ -545,11 +572,11 @@ libmed.so.11:_ZN18MED_VERSIONED_API3C1Ev
 libmed.so.11:_ZN18MED_VERSIONED_API3C2Ev
 libmed.so.11:_ZN18MED_VERSIONED_API3D1Ev
 libmed.so.11:_ZN18MED_VERSIONED_API3D2Ev
-libmed.so.11:_ZN25MED_GET_GEOTYPE_FROM_NAME8InstanceEv
-libmed.so.11:_ZN25MED_GET_GEOTYPE_FROM_NAMEC1Ev
-libmed.so.11:_ZN25MED_GET_GEOTYPE_FROM_NAMEC2Ev
-libmed.so.11:_ZN25MED_GET_GEOTYPE_FROM_NAMED1Ev
-libmed.so.11:_ZN25MED_GET_GEOTYPE_FROM_NAMED2Ev
+libmed.so.11:_ZN26MED_GET_GEOTYPE_FROM_INAME8InstanceEv
+libmed.so.11:_ZN26MED_GET_GEOTYPE_FROM_INAMEC1Ev
+libmed.so.11:_ZN26MED_GET_GEOTYPE_FROM_INAMEC2Ev
+libmed.so.11:_ZN26MED_GET_GEOTYPE_FROM_INAMED1Ev
+libmed.so.11:_ZN26MED_GET_GEOTYPE_FROM_INAMED2Ev
 libmed.so.11:_ZN9MEDerreurC1EPKcjS1_S1_
 libmed.so.11:_ZN9MEDerreurC2EPKcjS1_S1_
 libmed.so.11:_ZN9MEDerreurD0Ev
@@ -557,7 +584,7 @@ libmed.so.11:_ZN9MEDerreurD1Ev
 libmed.so.11:_ZN9MEDerreurD2Ev
 libmed.so.11:_ZNK17MED_VERSIONED_APIixERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
 libmed.so.11:_ZNK18MED_VERSIONED_API3ixERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
-libmed.so.11:_ZNK25MED_GET_GEOTYPE_FROM_NAMEixERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+libmed.so.11:_ZNK26MED_GET_GEOTYPE_FROM_INAMEixERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
 libmed.so.11:_ZNK9MEDerreur4whatEv
 libmed.so.11:__MEDobjectGetName
 libmed.so.11:edfchac_
@@ -1236,6 +1263,8 @@ libmedC.so.11:MEDfieldComputingStepInfo
 libmedC.so.11:MEDfieldComputingStepMeshInfo
 libmedC.so.11:MEDfieldComputingStepMeshWr
 libmedC.so.11:MEDfieldCr
+libmedC.so.11:MEDfieldEntityType
+libmedC.so.11:MEDfieldGeometryType
 libmedC.so.11:MEDfieldInfo
 libmedC.so.11:MEDfieldInfoByName
 libmedC.so.11:MEDfieldInterpInfo
@@ -1248,6 +1277,8 @@ libmedC.so.11:MEDfieldValueWithProfileWr
 libmedC.so.11:MEDfieldValueWr
 libmedC.so.11:MEDfieldnComponent
 libmedC.so.11:MEDfieldnComponentByName
+libmedC.so.11:MEDfieldnEntityType
+libmedC.so.11:MEDfieldnGeometryType
 libmedC.so.11:MEDfieldnInterp
 libmedC.so.11:MEDfieldnProfile
 libmedC.so.11:MEDfieldnValue
@@ -1276,7 +1307,15 @@ libmedC.so.11:MEDformatConforme
 libmedC.so.11:MEDgaussEcr
 libmedC.so.11:MEDgaussInfo
 libmedC.so.11:MEDgaussLire
-libmedC.so.11:MEDgetGeometryTypeFromName
+libmedC.so.11:MEDgetCellGeometryTypeIt
+libmedC.so.11:MEDgetEdgeGeometryTypeIt
+libmedC.so.11:MEDgetEntityGeometryTypeIt
+libmedC.so.11:MEDgetEntityTypeIt
+libmedC.so.11:MEDgetEntityTypeName
+libmedC.so.11:MEDgetFaceGeometryTypeIt
+libmedC.so.11:MEDgetGeometryTypeFromIname
+libmedC.so.11:MEDgetGeometryTypeName
+libmedC.so.11:MEDgetNodeGeometryTypeIt
 libmedC.so.11:MEDglobalNumEcr
 libmedC.so.11:MEDglobalNumLire
 libmedC.so.11:MEDgro2famCr
@@ -1490,6 +1529,7 @@ libmedC.so.11:_MED1cstring
 libmedC.so.11:_MED23v30stringConvert
 libmedC.so.11:_MED2cstring
 libmedC.so.11:_MEDGeometrieElement
+libmedC.so.11:_MEDaccess
 libmedC.so.11:_MEDattrFermer
 libmedC.so.11:_MEDattrNumEcrire
 libmedC.so.11:_MEDattrNumLire
@@ -1578,6 +1618,8 @@ libmedC.so.11:_MEDfieldComputingStepMeshInfo30
 libmedC.so.11:_MEDfieldComputingStepMeshInfo31
 libmedC.so.11:_MEDfieldCr30
 libmedC.so.11:_MEDfieldCr31
+libmedC.so.11:_MEDfieldEntityType41
+libmedC.so.11:_MEDfieldGeometryType41
 libmedC.so.11:_MEDfieldInfoByName236
 libmedC.so.11:_MEDfieldInfoByName30
 libmedC.so.11:_MEDfieldValueAdvancedRd236
@@ -1585,6 +1627,10 @@ libmedC.so.11:_MEDfieldValueAdvancedRd30
 libmedC.so.11:_MEDfieldValueAdvancedRd33
 libmedC.so.11:_MEDfieldValueAdvancedWr30
 libmedC.so.11:_MEDfieldValueAdvancedWr33
+libmedC.so.11:_MEDfieldValueAdvancedWr41
+libmedC.so.11:_MEDfieldValueUpdateEntityList
+libmedC.so.11:_MEDfieldnEntityType41
+libmedC.so.11:_MEDfieldnGeometryType41
 libmedC.so.11:_MEDfieldnProfile236
 libmedC.so.11:_MEDfieldnProfile30
 libmedC.so.11:_MEDfieldnValue
@@ -1618,6 +1664,8 @@ libmedC.so.11:_MEDgetDatasetName
 libmedC.so.11:_MEDgetDatasetParameter
 libmedC.so.11:_MEDgetDatatype
 libmedC.so.11:_MEDgetDynGeometricParameter
+libmedC.so.11:_MEDgetEntityListAttributeIName
+libmedC.so.11:_MEDgetEntityListAttributeINameAll
 libmedC.so.11:_MEDgetEntityTypeName
 libmedC.so.11:_MEDgetExternalGeometryTypeName
 libmedC.so.11:_MEDgetFieldEntityGeoTypeName
@@ -1675,6 +1723,8 @@ libmedC.so.11:_MEDnFamilyGroup30
 libmedC.so.11:_MEDnFamilyGroup32
 libmedC.so.11:_MEDnObjects
 libmedC.so.11:_MEDnObjets
+libmedC.so.11:_MEDnSet32bits
+libmedC.so.11:_MEDnSet8bits
 libmedC.so.11:_MEDnSubdomainJoint236
 libmedC.so.11:_MEDnSubdomainJoint30
 libmedC.so.11:_MEDnomDataset
@@ -1695,6 +1745,8 @@ libmedC.so.11:_MEDprofileRd236
 libmedC.so.11:_MEDprofileRd30
 libmedC.so.11:_MEDselectAllEntitiesFullI
 libmedC.so.11:_MEDselectAllEntitiesNoI
+libmedC.so.11:_MEDset32bits
+libmedC.so.11:_MEDset8bits
 libmedC.so.11:_MEDsetFilter
 libmedC.so.11:_MEDsetModeAcces
 libmedC.so.11:_MEDsoftlinkDel
@@ -1708,6 +1760,8 @@ libmedC.so.11:_MEDsubdomainCorrespondenceSizeInfo236
 libmedC.so.11:_MEDsubdomainCorrespondenceSizeInfo30
 libmedC.so.11:_MEDsubdomainJointInfo236
 libmedC.so.11:_MEDsubdomainJointInfo30
+libmedC.so.11:_MEDtest32bits
+libmedC.so.11:_MEDtest8bits
 libmedC.so.11:_MEDversionedApi
 libmedC.so.11:_MEDversionedApi3
 libmedC.so.11:_MEDvisit
@@ -1732,11 +1786,11 @@ libmedC.so.11:_ZN18MED_VERSIONED_API3C1Ev
 libmedC.so.11:_ZN18MED_VERSIONED_API3C2Ev
 libmedC.so.11:_ZN18MED_VERSIONED_API3D1Ev
 libmedC.so.11:_ZN18MED_VERSIONED_API3D2Ev
-libmedC.so.11:_ZN25MED_GET_GEOTYPE_FROM_NAME8InstanceEv
-libmedC.so.11:_ZN25MED_GET_GEOTYPE_FROM_NAMEC1Ev
-libmedC.so.11:_ZN25MED_GET_GEOTYPE_FROM_NAMEC2Ev
-libmedC.so.11:_ZN25MED_GET_GEOTYPE_FROM_NAMED1Ev
-libmedC.so.11:_ZN25MED_GET_GEOTYPE_FROM_NAMED2Ev
+libmedC.so.11:_ZN26MED_GET_GEOTYPE_FROM_INAME8InstanceEv
+libmedC.so.11:_ZN26MED_GET_GEOTYPE_FROM_INAMEC1Ev
+libmedC.so.11:_ZN26MED_GET_GEOTYPE_FROM_INAMEC2Ev
+libmedC.so.11:_ZN26MED_GET_GEOTYPE_FROM_INAMED1Ev
+libmedC.so.11:_ZN26MED_GET_GEOTYPE_FROM_INAMED2Ev
 libmedC.so.11:_ZN9MEDerreurC1EPKcjS1_S1_
 libmedC.so.11:_ZN9MEDerreurC2EPKcjS1_S1_
 libmedC.so.11:_ZN9MEDerreurD0Ev
@@ -1744,7 +1798,7 @@ libmedC.so.11:_ZN9MEDerreurD1Ev
 libmedC.so.11:_ZN9MEDerreurD2Ev
 libmedC.so.11:_ZNK17MED_VERSIONED_APIixERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
 libmedC.so.11:_ZNK18MED_VERSIONED_API3ixERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
-libmedC.so.11:_ZNK25MED_GET_GEOTYPE_FROM_NAMEixERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+libmedC.so.11:_ZNK26MED_GET_GEOTYPE_FROM_INAMEixERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
 libmedC.so.11:_ZNK9MEDerreur4whatEv
 libmedC.so.11:__MEDobjectGetName
 libmedC.so.11:exit_if
@@ -1777,6 +1831,7 @@ libmedimport.so.0:MAJ_236_300_string_datasets
 libmedimport.so.0:MAJ_300_310_champs
 libmedimport.so.0:MAJ_310_320_familles
 libmedimport.so.0:MAJ_320_330_champs
+libmedimport.so.0:MAJ_400_410_champs
 libmedimport.so.0:MAJ_version
 libmedimport.so.0:MAJ_version_num
 libmedimport.so.0:MAJ_write_version_num
@@ -1933,6 +1988,7 @@ libmedimport.so.0:_MEDfichierDemonter
 libmedimport.so.0:_MEDfichierFermer
 libmedimport.so.0:_MEDfichierMonter
 libmedimport.so.0:_MEDfichierOuvrir
+libmedimport.so.0:_MEDfieldValueUpdateEntityList
 libmedimport.so.0:_MEDindiceInfo
 libmedimport.so.0:_MEDindiceNum
 libmedimport.so.0:_MEDmodeAcces
@@ -1957,4 +2013,5 @@ libmedimport.so.0:afficheCorres
 libmedimport.so.0:exit_if
 libmedimport.so.0:f77ApiIsSet
 libmedimport.so.0:getFieldsOn
+libmedimport.so.0:getFieldsOn40
 libmedimport.so.0:getVersionedApi
